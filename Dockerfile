@@ -1,10 +1,5 @@
 FROM ros:melodic-ros-core
 
-# if you are not in China, delete this command or replace the mirrors 
-RUN sed -i 's/packages.ros.org/mirrors.ustc.edu.cn/' /etc/apt/sources.list.d/ros-latest.list \
-    && sed -i 's/archive.ubuntu.com/cn.archive.ubuntu.com/' /etc/apt/sources.list \
-    && sed -i 's/security.ubuntu.com/cn.archive.ubuntu.com/' /etc/apt/sources.list
-
 RUN apt-get update && apt-get upgrade -y \
     && apt-get install -y python-setuptools python-rosinstall \
                       ipython libeigen3-dev libboost-all-dev doxygen \
